@@ -91,6 +91,12 @@ const config: Config = {
           position: 'left',
           label: 'Developer',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'lawsSidebar',
+          position: 'left',
+          label: 'Laws',
+        },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',

@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ---
 
-## Tools for testing websites
+## Tools for testing your site
 
 - [axe Browser Extensions (Deque)](https://www.deque.com/axe/browser-extensions/)
 - [axe VS Code Linter](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter)
