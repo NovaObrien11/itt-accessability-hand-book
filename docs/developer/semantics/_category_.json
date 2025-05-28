@@ -1,8 +1,8 @@
 {
-  "label": "Resources",
+  "label": "Semantics",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Useful Resources"
+    "description": "Useful Semantic info"
   }
 }
