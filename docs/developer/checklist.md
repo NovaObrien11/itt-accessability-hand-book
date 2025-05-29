@@ -1,11 +1,11 @@
 ---
 title: Developer Checklist
 slug: /developer-checklist
-sidebar_position: 1
+sidebar_position: 2
 
 ---
 
-## Basic Accessibility Checklist for Developers
+## Basics
 
 1. **Semantic HTML**: Use proper HTML elements for their intended purpose (e.g., `<button>` for buttons, `<header>` for headers).
 2. **Keyboard Navigation**: Ensure all interactive elements are accessible via keyboard.
@@ -16,3 +16,11 @@ sidebar_position: 1
 7. **Error Handling**: Make error messages clear and accessible.
 8. **Responsive Design**: Ensure content adapts well to different screen sizes and orientations.
 9. **Testing**: Test with screen readers and other assistive technologies.
+
+## Compliance
+- [W3 WCAG Quick Ref](https://www.w3.org/WAI/WCAG22/quickref/)
+- [Deque Compliance Helper for EN-301-549](https://www.deque.com/en-301-549-compliance/)
+
+- For EU - [ETSI EN-301-549 PDF](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf)
+
+- Checkout the [Laws](play-it-safe) section for more info on how to be compliant with laws and regulations.
