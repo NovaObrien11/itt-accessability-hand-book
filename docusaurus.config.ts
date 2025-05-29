@@ -150,6 +150,10 @@ const config: Config = {
               to: '/blog',
             },
             {
+              label: 'Disclaimer',
+              to: 'docs/disclaimer',
+            },
+            {
               label: 'GitHub',
               href: 'https://github.com/facebook/docusaurus',
             },
@@ -160,8 +164,9 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} In Time Tec, LLC. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} In Time Tec, LLC. All rights reserved.`,
     },
+    noIndex: true,
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

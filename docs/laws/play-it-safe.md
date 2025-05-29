@@ -4,6 +4,9 @@ sidebar_position: 1
 description: Don't risk breaking laws - always apply WCAG 2.1 AA standards.
 ---
 
+:::danger
+**Disclaimer:** This handbook is intended for internal use only and is provided for general informational purposes. It is not legal advice. Compliance with accessibility standards and laws is the responsibility of each project team and may require consultation with qualified legal counsel.
+:::
 
 # Play it Safe
 
