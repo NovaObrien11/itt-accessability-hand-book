@@ -112,8 +112,16 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Designers',
+              to: '/docs/designer-checklist',
+            },
+            {
+              label: 'Developers',
+              to: '/docs/developer-checklist',
+            },
+            {
+              label: 'Laws',
+              to: '/docs/laws',
             },
           ],
         },
@@ -145,6 +153,10 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/facebook/docusaurus',
             },
+            {
+              label: 'In Time Tec',
+              href: "https://www.intimetec.com/"
+            }
           ],
         },
       ],

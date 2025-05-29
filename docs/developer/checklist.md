@@ -1,12 +1,11 @@
 ---
-id: checklist-id
-title: The Checklist
+title: Developer Checklist
 slug: /developer-checklist
 sidebar_position: 1
 
 ---
 
-### Basic Accessibility Checklist for Developers
+## Basic Accessibility Checklist for Developers
 
 1. **Semantic HTML**: Use proper HTML elements for their intended purpose (e.g., `<button>` for buttons, `<header>` for headers).
 2. **Keyboard Navigation**: Ensure all interactive elements are accessible via keyboard.
