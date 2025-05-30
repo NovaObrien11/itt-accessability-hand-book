@@ -1,5 +1,6 @@
 ---
 slug: /play-it-safe
+title: Play it Safe
 sidebar_position: 1
 description: Don't risk breaking laws - always apply WCAG 2.1 AA standards.
 ---

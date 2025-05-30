@@ -1,0 +1,9 @@
+{
+  "label": "Understandable",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Understandable is a core pillar of [POUR](pour.md). Users should easily understand what they're seeing and doing."
+
+  }
+}
