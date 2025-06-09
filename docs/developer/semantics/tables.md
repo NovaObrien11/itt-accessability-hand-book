@@ -76,10 +76,6 @@ Tables are for displaying tabular data—**not for layout**. Use semantic HTML t
 - Avoid putting complex interactive UI (forms, buttons) in tables unless it’s the best structure.
 - Avoid empty table cells; provide meaningful data or use `aria-hidden="true"` for presentational-only cells.
 
-## TL;DR
-
-Use tables only for data, label everything, and never for layout.
-
 ## References
 
 - [W3C: Tables Concepts](https://www.w3.org/WAI/tutorials/tables/)

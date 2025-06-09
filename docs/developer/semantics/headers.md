@@ -41,14 +41,7 @@ Use semantic heading tags `(<h1>–<h6>)` in order to structure your content—n
 
 ## Good vs Bad Examples
 
-:::tip Good Example
-```html
-<h1>Accessibility Handbook</h1>
-  <h2>Getting Started</h2>
-    <h3>Who is this for?</h3>
-  <h2>Guidelines</h2>
-```
-:::
+
 
 :::danger Bad Example
 ```html
@@ -58,6 +51,14 @@ Use semantic heading tags `(<h1>–<h6>)` in order to structure your content—n
 ```
 :::
 
+:::tip Good Example
+```html
+<h1>Accessibility Handbook</h1>
+  <h2>Getting Started</h2>
+    <h3>Who is this for?</h3>
+  <h2>Guidelines</h2>
+```
+:::
 
 ## Related Elements
 
