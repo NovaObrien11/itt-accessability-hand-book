@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkitt_accessibility_handbook=self.webpackChunkitt_accessibility_handbook||[]).push([[1235],{8552:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);

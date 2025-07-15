@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkitt_accessibility_handbook=self.webpackChunkitt_accessibility_handbook||[]).push([[3706],{3608:(e,i,s)=>{s.r(i),s.d(i,{default:()=>t});s(6540);var a=s(1656),c=s(4848);function t(){return(0,c.jsxs)(a.A,{children:[(0,c.jsx)("h1",{children:"My React page"}),(0,c.jsx)("p",{children:"This is a React page"})]})}}}]);
