@@ -4,6 +4,8 @@ A quick-reference for major digital accessibility laws around the world. **Note:
 
 ---
 
+# TODO need to check this is accurate as is ai overview
+
 ## 🇪🇺 European Union
 
 - **European Accessibility Act (EAA)**
@@ -11,6 +13,8 @@ A quick-reference for major digital accessibility laws around the world. **Note:
   - Enforcement begins June 28, 2025.
 - **EN 301 549**
   - Technical standard aligned with WCAG 2.1 AA for ICT products/services.
+- **EU Directive 2019/882**
+  - Accessibility requirements for private businesses.
 
 ## 🇩🇪 Germany
 
