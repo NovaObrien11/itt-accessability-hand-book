@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkitt_accessibility_handbook=self.webpackChunkitt_accessibility_handbook||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/blog","blogTitle":"Blog","authorsListPath":"/blog/authors"}')}}]);

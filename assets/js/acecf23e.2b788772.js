@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkitt_accessibility_handbook=self.webpackChunkitt_accessibility_handbook||[]).push([[1903],{1912:t=>{t.exports=JSON.parse('{"blogBasePath":"/itt-accessability-hand-book/blog","blogTitle":"Blog","authorsListPath":"/itt-accessability-hand-book/blog/authors"}')}}]);
