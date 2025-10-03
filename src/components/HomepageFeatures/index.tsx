@@ -24,18 +24,18 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-       Accessibility isn’t an add-on. It’s baked into every step, from planning to launch. If your product isn’t usable for everyone, it isn’t finished—<strong>
+       Accessibility isn’t an add-on. It’s baked into every step, from planning to launch. If your product isn’t usable for everyone, it isn’t finished <strong>
        period</strong>.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'People First',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        When you build with accessibility in mind, you create real value for 
+        everyone; your users, your partners, and your business.
       </>
     ),
   },

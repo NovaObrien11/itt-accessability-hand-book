@@ -93,6 +93,12 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          sidebarId: 'qaSidebar',
+          position: 'left',
+          label: 'QA/SDET',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'lawsSidebar',
           position: 'left',
           label: 'Laws',
@@ -118,6 +124,10 @@ const config: Config = {
             {
               label: 'Developers',
               to: '/docs/developer-checklist',
+            },
+            {
+              label: 'QA/SDET',
+              to: '/docs/qa/testing-tools',
             },
             {
               label: 'Laws',
