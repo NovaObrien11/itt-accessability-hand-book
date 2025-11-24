@@ -2,37 +2,36 @@
 slug: /play-it-safe
 title: Play it Safe
 sidebar_position: 1
-description: Don't risk breaking laws - always apply WCAG 2.1 AA standards.
+description: Don't risk breaking laws - always apply WCAG 2.2 AA standards.
 ---
 
-:::danger
-**Disclaimer:** This handbook is intended for internal use only and is provided for general informational purposes. It is not legal advice. Compliance with accessibility standards and laws is the responsibility of each project team and may require consultation with qualified legal counsel.
+:::danger Disclaimer
+**This handbook is for internal guidance only.**
+It is **not legal advice**. Accessibility laws vary by region and industry. Compliance is the responsibility of each project team and may require consultation with qualified legal counsel.
 :::
 
-# Play it Safe
+# Play it Safe: The Golden Rule
 
-Adhering to WCAG 2.1 AA (or EN-301-549 in the European Union) standards ensures your digital content is accessible to a wide audience, including individuals with disabilities. By following these guidelines, you not only comply with legal requirements but also demonstrate a commitment to inclusivity and usability.
+> **"When in doubt, aim for WCAG 2.2 Level AA."**
 
-## Why WCAG 2.1 AA?
+Accessibility laws (like the ADA in the US or EAA in Europe) are complex and evolving. However, almost all of them point to one technical standard as the safe harbor: the **Web Content Accessibility Guidelines (WCAG)**.
 
-WCAG 2.1 AA is widely recognized as the benchmark for web accessibility. It provides clear criteria to make websites and applications perceivable, operable, understandable, and robust for all users. Meeting these standards can help you avoid legal risks and improve user experience.
+## Why WCAG 2.2 AA?
 
-## EN-301-549
-If you're operating in the European Union then you will have to comply with EN-301-549 over WCAG.
+While laws differ, the technical solution is universal. WCAG 2.2 Level AA is the current global benchmark.
 
-## Research local laws
-Do your own research to make sure you are following the most up to date laws and regulations of applicable states, or country.
+*   **United States**: The DOJ references WCAG (often 2.1, but 2.2 is the future-proof target) for ADA compliance.
+*   **European Union**: The EN 301 549 standard mirrors WCAG criteria.
+*   **Canada**: ACA and AODA point directly to WCAG.
 
-## Key Benefits
+## Risk Mitigation Strategy
 
-- **Legal Compliance**: Avoid lawsuits and penalties by adhering to accessibility laws.
-- **Expanded Audience**: Reach more users, including those with disabilities.
-- **Enhanced Usability**: Improve navigation and functionality for all users.
+To minimize legal risk and maximize user access, follow this strategy:
 
-## How to Get Started
+1.  **Adopt WCAG 2.2 AA** as your internal definition of "Done".
+2.  **Document your efforts**. Keep records of audits, automated test results, and remediation plans. Intent and progress matter in legal contexts.
+3.  **Provide a Feedback Mechanism**. Ensure users can report accessibility barriers (e.g., an "Accessibility Statement" page with contact info). This often prevents lawsuits by allowing you to fix issues before they escalate.
 
-1. **Audit Your Content**: Use accessibility tools to identify areas for improvement.
-2. **Implement Changes**: Update your design and code to meet WCAG 2.1 AA standards.
-3. **Test Regularly**: Continuously monitor and test your content for compliance.
+## Key Takeaway
 
-Make accessibility a priority. You’ll stay compliant, avoid headaches, and—most importantly—build something everyone can actually use.
+You don't need to be a lawyer to build compliant software. You just need to be a good engineer who follows the standard. **If you meet WCAG 2.2 AA, you are likely meeting the law.**

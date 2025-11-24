@@ -4,18 +4,26 @@ sidebar_position: 2
 description: Nondiscrimination on the Basis of Disability by Public Accommodations and in Commercial Facilities
 ---
 
+# ADA Title III
 
-# Ada Title iii
-- RIN 1190–AA44 Nondiscrimination on the Basis of Disability by Public Accommodations and in Commercial Facilities
+**Title III of the Americans with Disabilities Act (ADA)** prohibits discrimination on the basis of disability in "places of public accommodation."
 
-## Summary
-This final rule revises the Department of Justice (Department) regulation that implements title III of the Americans with Disabilities Act (ADA), relating to nondiscrimination on the basis of disability by public accommodations and in commercial facilities. The Department is issuing this final rule in order to adopt enforceable accessibility standards under the Americans with Disabilities Act of 1990 (ADA) that are consistent with the minimum guidelines and requirements issued by the Architectural and Transportation Barriers Compliance Board, and to update or amend certain provisions of the title III regulation so that they comport with the Department’s legal and practical experiences in enforcing the ADA since 1991. Concurrently with the publication of the final rule for title III, the Department is publishing a final rule amending its ADA title II regulation, which covers nondiscrimination on the basis of disability in State and local government services.
+## Does it apply to websites?
+**Yes.** While the ADA (passed in 1990) does not explicitly mention the internet, the Department of Justice (DOJ) and numerous court rulings have affirmed that websites and mobile apps of businesses open to the public (retailers, banks, hotels, etc.) are considered places of public accommodation.
 
-## AI Summary
-ADA Title III requires all businesses open to the public (“places of public accommodation”) to provide equal access to their goods and services for individuals with disabilities. This obligation now includes digital content, such as websites and apps. While ADA Title III does not specify a technical standard, the Department of Justice and the courts have consistently treated the Web Content Accessibility Guidelines (WCAG) 2.1 AA as the expected benchmark. If your website or app is not accessible per WCAG 2.1 AA, you risk legal action and potential settlements.
+## The DOJ's Stance
+In recent guidance and rulemaking, the DOJ has clarified that:
+1.  **Web accessibility is required** under Title III.
+2.  **WCAG 2.1 Level AA** is the technical standard the DOJ uses to assess compliance.
 
-*In short:
-To comply with ADA Title III, businesses should ensure their websites and digital offerings meet WCAG 2.1 AA standards, even though the law does not mandate this standard by name. It’s the safest and most widely accepted measure of accessibility in the U.S. private sector.*
+## Practical Implications
+If your digital content is not accessible, you are at risk of:
+*   **Lawsuits**: Thousands of ADA Title III lawsuits are filed annually against businesses with inaccessible websites.
+*   **Demand Letters**: Many businesses receive legal demands to fix their sites before a lawsuit is filed.
+
+## Recommendation
+To comply with ADA Title III, businesses should ensure their websites and digital offerings meet **WCAG 2.1 AA** (or ideally **2.2 AA**) standards. This is the safest and most widely accepted measure of accessibility in the U.S. private sector.
 
 ## Legal Reference
-- [ADA Title iii](https://www.ada.gov/law-and-regs/regulations/title-iii-regulations/)
+*   [ADA Title III Regulations](https://www.ada.gov/law-and-regs/regulations/title-iii-regulations/)
+*   [DOJ Guidance on Web Accessibility](https://www.ada.gov/resources/web-guidance/)

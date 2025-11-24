@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Accessability Hand Book',
-  tagline: 'In Time Tec Guidelines',
+  title: 'ITT Accessibility Handbook',
+  tagline: 'Building Inclusive Software for Everyone',
   favicon: 'img/ITT-logo-xs.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -79,6 +79,12 @@ const config: Config = {
         src: 'img/ITT-logo-xs.svg',
       },
       items: [
+        {
+          type: 'doc',
+          docId: 'manifesto',
+          position: 'left',
+          label: 'Manifesto',
+        },
         {
           type: 'docSidebar',
           sidebarId: 'designerSidebar',

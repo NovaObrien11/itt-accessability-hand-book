@@ -3,16 +3,18 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
+import { ShieldCheckered, Stack, Users } from '@phosphor-icons/react';
+
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: React.ElementType;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Create Compliant Sites',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: ShieldCheckered,
     description: (
       <>
        Use this handbook to ensure your sites meet accessibility laws and standards
@@ -21,7 +23,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Not Just a Checkbox',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: Stack,
     description: (
       <>
        Accessibility isn’t an add-on. It’s baked into every step, from planning to launch. If your product isn’t usable for everyone, it isn’t finished <strong>
@@ -31,7 +33,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'People First',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: Users,
     description: (
       <>
         When you build with accessibility in mind, you create real value for 
@@ -45,7 +47,7 @@ function Feature({title, Svg, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <Svg className={styles.featureSvg} size={64} weight="duotone" />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

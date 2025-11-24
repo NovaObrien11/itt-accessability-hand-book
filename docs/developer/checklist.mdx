@@ -2,28 +2,64 @@
 title: Developer Checklist
 slug: /developer-checklist
 sidebar_position: 2
-
 ---
 
-## Basics
+import { Toolbox, Laptop, RocketLaunch, Square, CheckSquare, Code, Keyboard, Image, CursorClick, Books } from '@phosphor-icons/react';
 
-|   | Checklist Item 
+> "The best way to ensure accessibility is to bake it into your workflow, not bolt it on at the end."
+
+## <Toolbox size={32} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Tooling & Setup (Do This First)
+
+Before writing code, ensure your environment is set up to catch issues early.
+
+|   | Checklist Item |
 |---|:--------------|
-| <input type="checkbox" /> | 1. **Semantic HTML**: Use proper HTML elements for their intended purpose (e.g., `<button>` for buttons, `<header>` for headers). |
-| <input type="checkbox" /> | 2. **Keyboard Navigation**: Ensure all interactive elements are accessible via keyboard. |
-| <input type="checkbox" /> | 3. **ARIA Roles**: Use ARIA roles sparingly and only when necessary to enhance accessibility. |
-| <input type="checkbox" /> | 4. **Color Contrast**: Verify sufficient contrast between text and background colors. |
-| <input type="checkbox" /> | 5. **Alt Text**: Provide meaningful alt text for images. |
-| <input type="checkbox" /> | 6. **Focus Management**: Ensure focus is managed correctly, especially for dynamic content. |
-| <input type="checkbox" /> | 7. **Error Handling**: Make error messages clear and accessible. |
-| <input type="checkbox" /> | 8. **Responsive Design**: Ensure content adapts well to different screen sizes and orientations. |
-| <input type="checkbox" /> | 9. **Testing**: Test with screen readers and other assistive technologies. |
-| <input type="checkbox" /> | 10. **A11y ESLint**: Enable and use `eslint-plugin-jsx-a11y` to catch accessibility issues during development. See [Tools](/tools) for setup instructions. |
+| <Square size={24} /> | **Install ESLint Plugin**: Add `eslint-plugin-jsx-a11y` to your project. <br/>`npm install eslint-plugin-jsx-a11y --save-dev` |
+| <Square size={24} /> | **Configure VS Code**: Install the **axe Accessibility Linter** extension for real-time feedback. |
+| <Square size={24} /> | **CI/CD Gate**: Ensure `axe-core` or `pa11y` runs in your build pipeline. Fail the build on new violations. |
 
-## Compliance
+## <Laptop size={32} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Implementation Checklist
+
+### <Code size={28} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Semantic HTML & Structure
+|   | Checklist Item |
+|---|:--------------|
+| <Square size={24} /> | **Landmarks**: Use `<main>`, `<nav>`, `<header>`, `<footer>`, and `<aside>` to define page structure. |
+| <Square size={24} /> | **Headings**: Use `<h1>` through `<h6>` in logical order. No skipped levels (e.g., don't jump from `h1` to `h3`). |
+| <Square size={24} /> | **Buttons vs. Links**: Use `<button>` for actions (submit, toggle) and `<a>` for navigation. |
+| <Square size={24} /> | **Lists**: Use `<ul>`, `<ol>`, and `<dl>` for list content, not `<div>` soup. |
+
+### <Keyboard size={28} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Keyboard & Focus
+|   | Checklist Item |
+|---|:--------------|
+| <Square size={24} /> | **Visible Focus**: Never set `outline: none` without providing a visible alternative style. |
+| <Square size={24} /> | **Tab Order**: Ensure tab order follows the visual flow. Avoid positive `tabindex` values (e.g., `tabindex="1"`). |
+| <Square size={24} /> | **Skip Links**: Include a "Skip to Main Content" link as the first focusable element. |
+| <Square size={24} /> | **Focus Traps**: Modals and drawers must trap focus while open and return focus to the trigger when closed. |
+
+### <Image size={28} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Images & Media
+|   | Checklist Item |
+|---|:--------------|
+| <Square size={24} /> | **Alt Text**: All `<img>` tags have an `alt` attribute. Use `alt=""` for decorative images. |
+| <Square size={24} /> | **No Text in Images**: Avoid baking text into images. If unavoidable, ensure the `alt` text contains the full message. |
+| <Square size={24} /> | **Captions**: Ensure all video content has closed captions. |
+
+### <CursorClick size={28} style={{verticalAlign: 'middle', marginRight: '10px'}} /> ARIA (Accessible Rich Internet Applications)
+> **First Rule of ARIA**: Don't use ARIA if a native HTML element will do.
+
+|   | Checklist Item |
+|---|:--------------|
+| <Square size={24} /> | **Valid Roles**: Use valid ARIA roles (e.g., `role="dialog"`, `role="alert"`). |
+| <Square size={24} /> | **State Management**: Update `aria-expanded`, `aria-hidden`, and `aria-selected` dynamically via JavaScript. |
+| <Square size={24} /> | **Labeling**: Use `aria-label` or `aria-labelledby` for interactive elements without visible text (e.g., icon buttons). |
+
+## <RocketLaunch size={32} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Definition of Done (DoD)
+
+A feature is **NOT** complete until:
+1.  <Square size={20} style={{verticalAlign: 'text-bottom', marginRight: '8px'}} /> No linting errors from `eslint-plugin-jsx-a11y`.
+2.  <Square size={20} style={{verticalAlign: 'text-bottom', marginRight: '8px'}} /> Automated tests (axe-core) pass.
+3.  <Square size={20} style={{verticalAlign: 'text-bottom', marginRight: '8px'}} /> Manual keyboard navigation test passes (Tab through the entire flow).
+4.  <Square size={20} style={{verticalAlign: 'text-bottom', marginRight: '8px'}} /> Screen reader verification (VoiceOver/NVDA) confirms usability.
+
+## <Books size={32} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Compliance Resources
 - [W3 WCAG Quick Ref](https://www.w3.org/WAI/WCAG22/quickref/)
-- [Deque Compliance Helper for EN-301-549](https://www.deque.com/en-301-549-compliance/)
-
-- For EU - [ETSI EN-301-549 PDF](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf)
-
-- Checkout the [Laws](play-it-safe) section for more info on how to be compliant with laws and regulations.
+- [Deque Compliance Helper](https://www.deque.com/en-301-549-compliance/)

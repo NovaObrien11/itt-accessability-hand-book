@@ -1,54 +1,69 @@
 ---
 slug: /designer-checklist
 sidebar_position: 1
-
 ---
+
+import { PaintBrush, Code, CheckCircle, Square, PencilSimple } from '@phosphor-icons/react';
+
 # Designer Accessibility Checklist
 
-## Design Phase
+> "Accessibility starts in design. Annotate early to save time later."
+
+## <PencilSimple size={32} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Annotations & Handoff (Shift Left)
+
+Make accessibility intent clear to developers *before* they start coding.
 
 |   | Checklist Item | Resource |
 |---|:--------------|:---------|
-| <input type="checkbox" /> | **1.3.3 Sensory-Agnostic Instructions** - Ensure instructions are not relying on a single sensory ability. | [WCAG 2.2 - Sensory Characteristics](https://www.w3.org/TR/WCAG22/#sensory-characteristics) |
-| <input type="checkbox" /> | **1.4.1 Information Color** - Use something besides color alone to convey information. | [WCAG 2.2 - Use of Color](https://www.w3.org/TR/WCAG22/#use-of-color) |
-| <input type="checkbox" /> | **1.4.3 Color Contrast** - Ensure color contrast ratios meet minimum requirements. | [WCAG 2.2 - Contrast Minimum](https://www.w3.org/TR/WCAG22/#contrast-minimum) |
-| <input type="checkbox" /> | **1.4.5 Text as Image** - Use live text whenever possible instead of images of text (e.g., logo). | [WCAG 2.2 - Images of Text](https://www.w3.org/TR/WCAG22/#images-of-text) |
-| <input type="checkbox" /> | **1.4.8 Visual Presentation** - Width is no more than 80 characters or glyphs (40 if CJK). | [WCAG 2.2 - Visual Presentation](https://www.w3.org/TR/WCAG22/#visual-presentation) |
-| <input type="checkbox" /> | **1.4.11 Color Contrast (Non-text)** - All meaningful non-text content (e.g., buttons, icons) should have a minimum 3:1 color contrast ratio. | [WCAG 2.2 - Non-text Contrast](https://www.w3.org/TR/WCAG22/#non-text-contrast) |
-| <input type="checkbox" /> | **2.3.1 Flashing Content** - Avoid content that flashes more than three times per second. | [WCAG 2.2 - Three Flashes or Below Threshold](https://www.w3.org/TR/WCAG22/#three-flashes-or-below-threshold) |
-| <input type="checkbox" /> | **2.4.3 Content Order** - Users must be able to navigate in a logical order that preserves meaning. | [WCAG 2.2 - Focus Order](https://www.w3.org/TR/WCAG22/#focus-order) |
-| <input type="checkbox" /> | **2.4.4 Meaningful Anchor Text** - The purpose of each link should be clear from its anchor text. | [WCAG 2.2 - Link Purpose in Context](https://www.w3.org/TR/WCAG22/#link-purpose-in-context) |
-| <input type="checkbox" /> | **2.4.5 Discoverable Content** - Multiple ways to find different pages and content. | [WCAG 2.2 - Multiple Ways](https://www.w3.org/TR/WCAG22/#multiple-ways) |
-| <input type="checkbox" /> | **2.4.6 Meaningful Wording** - Headings and labels must be clear and descriptive. | [WCAG 2.2 - Headings and Labels](https://www.w3.org/TR/WCAG22/#headings-and-labels) |
-| <input type="checkbox" /> | **2.4.7 Focus Visibility** - UI controls that receive keyboard focus should have a visible indicator. | [WCAG 2.2 - Focus Visible](https://www.w3.org/TR/WCAG22/#focus-visible) |
-| <input type="checkbox" /> | **2.4.11 Discoverable Focus** - Focused elements must not be hidden or blocked by other content. | [WCAG 2.2 - Focus Not Obscured Minimum](https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum) |
-| <input type="checkbox" /> | **2.5.4 Motion Control** - Provide alternatives for motion-activated functions and allow disabling motion activation. | [WCAG 2.2 - Motion Actuation](https://www.w3.org/TR/WCAG22/#motion-actuation) |
-| <input type="checkbox" /> | **2.5.8 Target Size** - Interactive elements must be at least 24x24 CSS pixels. | [WCAG 2.2 - Target Size Minimum](https://www.w3.org/TR/WCAG22/#target-size-minimum) |
-| <input type="checkbox" /> | **3.2.1 Context Changes** - Context must not change just because an item receives focus. | [WCAG 2.2 - On Focus](https://www.w3.org/TR/WCAG22/#on-focus) |
-| <input type="checkbox" /> | **3.2.2 UI Recognition** - UI changes should not occur automatically due to user input without warning. | [WCAG 2.2 - On Input](https://www.w3.org/TR/WCAG22/#on-input) |
-| <input type="checkbox" /> | **3.2.3 System Consistency** - Navigation and layout must be consistent across all pages. | [WCAG 2.2 - Consistent Navigation](https://www.w3.org/TR/WCAG22/#consistent-navigation) |
-| <input type="checkbox" /> | **3.2.4 Consistent Design Patterns** - Components with the same function are consistently identified. | [WCAG 2.2 - Consistent Identification](https://www.w3.org/TR/WCAG22/#consistent-identification) |
-| <input type="checkbox" /> | **3.2.6 Discoverable Documentation** - Help options (support, contact, chatbots) should be consistent and predictable. | [WCAG 2.2 - Consistent Help](https://www.w3.org/TR/WCAG22/#consistent-help) |
-| <input type="checkbox" /> | **3.3.1 Form Errors** - Make form errors easy to identify, understand, and correct. | [WCAG 2.2 - Error Identification](https://www.w3.org/TR/WCAG22/#error-identification) |
-| <input type="checkbox" /> | **3.3.2 Form Instructions** - Provide clear visual and programmatic labels or instructions for input fields. | [WCAG 2.2 - Labels or Instructions](https://www.w3.org/TR/WCAG22/#labels-or-instructions) |
-| <input type="checkbox" /> | **3.3.3 Error Fixes** - If an input error is detected, provide suggestions for correcting it. | [WCAG 2.2 - Error Suggestion](https://www.w3.org/TR/WCAG22/#error-suggestion) |
+| <Square size={24} /> | **Heading Hierarchy**: Mark up `H1` through `H6` directly in the design file. | [Figma A11y Kit](https://www.figma.com/community/file/773141595143631348) |
+| <Square size={24} /> | **Focus Order**: Draw arrows to indicate the logical tab order if it differs from the visual layout (e.g., masonry grids). | [Focus Order](https://www.w3.org/TR/WCAG22/#focus-order) |
+| <Square size={24} /> | **Alt Text**: Write the intended alt text for complex images in a comment or annotation layer. | [Alt Text Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/) |
+| <Square size={24} /> | **Interactive States**: Design `hover`, `focus`, and `active` states for all interactive elements. | [Focus Visible](https://www.w3.org/TR/WCAG22/#focus-visible) |
 
-## Development Phase
+## <PaintBrush size={32} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Design Phase
 
 |   | Checklist Item | Resource |
 |---|:--------------|:---------|
-| <input type="checkbox" /> | **1.1.1 Alt Text** - All images and non-text content must have a text alternative. | [WCAG 2.2 - Non-text Content](https://www.w3.org/TR/WCAG22/#non-text-content) |
-| <input type="checkbox" /> | **1.2.5 Audio Descriptions** - Provide both transcripts and audio descriptions for audio content. | [WCAG 2.2 - Audio Description Prerecorded](https://www.w3.org/TR/WCAG22/#audio-description-prerecorded) |
-| <input type="checkbox" /> | **1.4.2 Audio Controls** - Provide controls to pause, stop, or mute audio. | [WCAG 2.2 - Audio Control](https://www.w3.org/TR/WCAG22/#audio-control) |
-| <input type="checkbox" /> | **1.4.13 Content Accessibility** - Additional content (pop-ups, submenus) can be dismissed or remain visible as desired. | [WCAG 2.2 - Content on Hover or Focus](https://www.w3.org/TR/WCAG22/#content-on-hover-or-focus) |
-| <input type="checkbox" /> | **2.1.2 Keyboard Navigation** - Keyboard-only users must be able to navigate without getting stuck. | [WCAG 2.2 - No Keyboard Trap](https://www.w3.org/TR/WCAG22/#no-keyboard-trap) |
-| <input type="checkbox" /> | **2.2.2 Motion Within Content** - Users must be able to pause, stop, or hide blinking, scrolling, or moving content. | [WCAG 2.2 - Enough Time](https://www.w3.org/TR/WCAG22/#enough-time) |
-| <input type="checkbox" /> | **3.3.4 Clear Recognition, Diagnoses, and Recovery** - For legal/financial pages, submissions must be reversible, errors correctable, and confirmation available. | [WCAG 2.2 - Error Prevention Legal Financial Data](https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data) |
-| <input type="checkbox" /> | **3.3.8 Clear Authentication** - Users can authenticate without relying solely on memory/cognitive tests; alternatives or assistance are provided. | [WCAG 2.2 - Accessible Authentication Minimum](https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum) |
+| <Square size={24} /> | **1.3.3 Sensory-Agnostic Instructions** - Ensure instructions are not relying on a single sensory ability. | [WCAG 2.2 - Sensory Characteristics](https://www.w3.org/TR/WCAG22/#sensory-characteristics) |
+| <Square size={24} /> | **1.4.1 Information Color** - Use something besides color alone to convey information. | [WCAG 2.2 - Use of Color](https://www.w3.org/TR/WCAG22/#use-of-color) |
+| <Square size={24} /> | **1.4.3 Color Contrast** - Ensure color contrast ratios meet minimum requirements. | [WCAG 2.2 - Contrast Minimum](https://www.w3.org/TR/WCAG22/#contrast-minimum) |
+| <Square size={24} /> | **1.4.5 Text as Image** - Use live text whenever possible instead of images of text (e.g., logo). | [WCAG 2.2 - Images of Text](https://www.w3.org/TR/WCAG22/#images-of-text) |
+| <Square size={24} /> | **1.4.8 Visual Presentation** - Width is no more than 80 characters or glyphs (40 if CJK). | [WCAG 2.2 - Visual Presentation](https://www.w3.org/TR/WCAG22/#visual-presentation) |
+| <Square size={24} /> | **1.4.11 Color Contrast (Non-text)** - All meaningful non-text content (e.g., buttons, icons) should have a minimum 3:1 color contrast ratio. | [WCAG 2.2 - Non-text Contrast](https://www.w3.org/TR/WCAG22/#non-text-contrast) |
+| <Square size={24} /> | **2.3.1 Flashing Content** - Avoid content that flashes more than three times per second. | [WCAG 2.2 - Three Flashes or Below Threshold](https://www.w3.org/TR/WCAG22/#three-flashes-or-below-threshold) |
+| <Square size={24} /> | **2.4.3 Content Order** - Users must be able to navigate in a logical order that preserves meaning. | [WCAG 2.2 - Focus Order](https://www.w3.org/TR/WCAG22/#focus-order) |
+| <Square size={24} /> | **2.4.4 Meaningful Anchor Text** - The purpose of each link should be clear from its anchor text. | [WCAG 2.2 - Link Purpose in Context](https://www.w3.org/TR/WCAG22/#link-purpose-in-context) |
+| <Square size={24} /> | **2.4.5 Discoverable Content** - Multiple ways to find different pages and content. | [WCAG 2.2 - Multiple Ways](https://www.w3.org/TR/WCAG22/#multiple-ways) |
+| <Square size={24} /> | **2.4.6 Meaningful Wording** - Headings and labels must be clear and descriptive. | [WCAG 2.2 - Headings and Labels](https://www.w3.org/TR/WCAG22/#headings-and-labels) |
+| <Square size={24} /> | **2.4.7 Focus Visibility** - UI controls that receive keyboard focus should have a visible indicator. | [WCAG 2.2 - Focus Visible](https://www.w3.org/TR/WCAG22/#focus-visible) |
+| <Square size={24} /> | **2.4.11 Discoverable Focus** - Focused elements must not be hidden or blocked by other content. | [WCAG 2.2 - Focus Not Obscured Minimum](https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum) |
+| <Square size={24} /> | **2.5.4 Motion Control** - Provide alternatives for motion-activated functions and allow disabling motion activation. | [WCAG 2.2 - Motion Actuation](https://www.w3.org/TR/WCAG22/#motion-actuation) |
+| <Square size={24} /> | **2.5.8 Target Size** - Interactive elements must be at least 24x24 CSS pixels. | [WCAG 2.2 - Target Size Minimum](https://www.w3.org/TR/WCAG22/#target-size-minimum) |
+| <Square size={24} /> | **3.2.1 Context Changes** - Context must not change just because an item receives focus. | [WCAG 2.2 - On Focus](https://www.w3.org/TR/WCAG22/#on-focus) |
+| <Square size={24} /> | **3.2.2 UI Recognition** - UI changes should not occur automatically due to user input without warning. | [WCAG 2.2 - On Input](https://www.w3.org/TR/WCAG22/#on-input) |
+| <Square size={24} /> | **3.2.3 System Consistency** - Navigation and layout must be consistent across all pages. | [WCAG 2.2 - Consistent Navigation](https://www.w3.org/TR/WCAG22/#consistent-navigation) |
+| <Square size={24} /> | **3.2.4 Consistent Design Patterns** - Components with the same function are consistently identified. | [WCAG 2.2 - Consistent Identification](https://www.w3.org/TR/WCAG22/#consistent-identification) |
+| <Square size={24} /> | **3.2.6 Discoverable Documentation** - Help options (support, contact, chatbots) should be consistent and predictable. | [WCAG 2.2 - Consistent Help](https://www.w3.org/TR/WCAG22/#consistent-help) |
+| <Square size={24} /> | **3.3.1 Form Errors** - Make form errors easy to identify, understand, and correct. | [WCAG 2.2 - Error Identification](https://www.w3.org/TR/WCAG22/#error-identification) |
+| <Square size={24} /> | **3.3.2 Form Instructions** - Provide clear visual and programmatic labels or instructions for input fields. | [WCAG 2.2 - Labels or Instructions](https://www.w3.org/TR/WCAG22/#labels-or-instructions) |
+| <Square size={24} /> | **3.3.3 Error Fixes** - If an input error is detected, provide suggestions for correcting it. | [WCAG 2.2 - Error Suggestion](https://www.w3.org/TR/WCAG22/#error-suggestion) |
 
-## Testing Phase
+## <Code size={32} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Development Phase
 
 |   | Checklist Item | Resource |
 |---|:--------------|:---------|
-| <input type="checkbox" /> | **1.4.4 Text Scale** - Text must be resizable up to 200% without loss of content or functionality. | [WCAG 2.2 - Resize Text](https://www.w3.org/TR/WCAG22/#resize-text) |
-| <input type="checkbox" /> | **1.4.12 Adjustable Text Spacing** - Text spacing can be adjusted without causing a poor experience. | [WCAG 2.2 - Text Spacing](https://www.w3.org/TR/WCAG22/#text-spacing) |
+| <Square size={24} /> | **1.1.1 Alt Text** - All images and non-text content must have a text alternative. | [WCAG 2.2 - Non-text Content](https://www.w3.org/TR/WCAG22/#non-text-content) |
+| <Square size={24} /> | **1.2.5 Audio Descriptions** - Provide both transcripts and audio descriptions for audio content. | [WCAG 2.2 - Audio Description Prerecorded](https://www.w3.org/TR/WCAG22/#audio-description-prerecorded) |
+| <Square size={24} /> | **1.4.2 Audio Controls** - Provide controls to pause, stop, or mute audio. | [WCAG 2.2 - Audio Control](https://www.w3.org/TR/WCAG22/#audio-control) |
+| <Square size={24} /> | **1.4.13 Content Accessibility** - Additional content (pop-ups, submenus) can be dismissed or remain visible as desired. | [WCAG 2.2 - Content on Hover or Focus](https://www.w3.org/TR/WCAG22/#content-on-hover-or-focus) |
+| <Square size={24} /> | **2.1.2 Keyboard Navigation** - Keyboard-only users must be able to navigate without getting stuck. | [WCAG 2.2 - No Keyboard Trap](https://www.w3.org/TR/WCAG22/#no-keyboard-trap) |
+| <Square size={24} /> | **2.2.2 Motion Within Content** - Users must be able to pause, stop, or hide blinking, scrolling, or moving content. | [WCAG 2.2 - Enough Time](https://www.w3.org/TR/WCAG22/#enough-time) |
+| <Square size={24} /> | **3.3.4 Clear Recognition, Diagnoses, and Recovery** - For legal/financial pages, submissions must be reversible, errors correctable, and confirmation available. | [WCAG 2.2 - Error Prevention Legal Financial Data](https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data) |
+| <Square size={24} /> | **3.3.8 Clear Authentication** - Users can authenticate without relying solely on memory/cognitive tests; alternatives or assistance are provided. | [WCAG 2.2 - Accessible Authentication Minimum](https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum) |
+
+## <CheckCircle size={32} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Testing Phase
+
+|   | Checklist Item | Resource |
+|---|:--------------|:---------|
+| <Square size={24} /> | **1.4.4 Text Scale** - Text must be resizable up to 200% without loss of content or functionality. | [WCAG 2.2 - Resize Text](https://www.w3.org/TR/WCAG22/#resize-text) |
+| <Square size={24} /> | **1.4.12 Adjustable Text Spacing** - Text spacing can be adjusted without causing a poor experience. | [WCAG 2.2 - Text Spacing](https://www.w3.org/TR/WCAG22/#text-spacing) |
