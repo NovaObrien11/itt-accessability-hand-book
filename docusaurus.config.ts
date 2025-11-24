@@ -86,6 +86,12 @@ const config: Config = {
           label: 'Manifesto',
         },
         {
+          type: 'doc',
+          docId: 'wcag-overview',
+          position: 'left',
+          label: 'WCAG 2.2',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'designerSidebar',
           position: 'left',
@@ -109,6 +115,12 @@ const config: Config = {
           position: 'left',
           label: 'Laws',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'conditionsSidebar',
+          position: 'left',
+          label: 'Conditions',
+        },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/NovaObrien11/itt-accessability-hand-book',
@@ -123,6 +135,10 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
+            {
+              label: 'WCAG 2.2 Overview',
+              to: '/docs/wcag-overview',
+            },
             {
               label: 'Designers',
               to: '/docs/designer-checklist',

@@ -41,6 +41,8 @@ This means:
 3.  **Understandable**: Information and the operation of user interface must be understandable.
 4.  **Robust**: Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.
 
+For a comprehensive overview of WCAG 2.2, including the four principles (POUR), 13 guidelines, and all success criteria, see our **[WCAG 2.2 Overview](/docs/wcag-overview)**.
+
 ---
 
 *Signed,*

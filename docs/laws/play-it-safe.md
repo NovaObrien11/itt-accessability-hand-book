@@ -24,6 +24,16 @@ While laws differ, the technical solution is universal. WCAG 2.2 Level AA is the
 *   **European Union**: The EN 301 549 standard mirrors WCAG criteria.
 *   **Canada**: ACA and AODA point directly to WCAG.
 
+## Don't Forget State and Local Laws
+
+In addition to federal laws, **state and local governments** may have their own accessibility requirements:
+
+- **State laws**: Some states (like California's Unruh Act, New York's Human Rights Law) have additional accessibility requirements
+- **City ordinances**: Major cities may have local accessibility ordinances that apply to businesses operating within their jurisdiction
+- **Industry-specific regulations**: Certain industries may have additional state-level requirements
+
+**Best practice**: When starting a new project, especially for government clients or in regulated industries, check for applicable state and local accessibility laws. Most will reference WCAG, but deadlines, scope, and enforcement may differ.
+
 ## Risk Mitigation Strategy
 
 To minimize legal risk and maximize user access, follow this strategy:

@@ -5,6 +5,47 @@ sidebar_position: 10
 
 # Accessibility Standards & Guidelines
 
+## WCAG 2.2
+
+**What it is:** Web Content Accessibility Guidelines 2.2
+
+**Purpose:** The international standard for web accessibility
+
+**Details:** WCAG 2.2 is the most authoritative source of web accessibility guidelines worldwide. Published by the W3C in 2024, it provides a comprehensive set of guidelines organized around four principles (POUR): Perceivable, Operable, Understandable, and Robust. WCAG 2.2 is technology-agnostic and applicable to all web technologies.
+
+For a complete overview of WCAG 2.2, including the four principles, 13 guidelines, and conformance levels, see our **[WCAG 2.2 Overview](/docs/wcag-overview)**.
+
+## WCAG vs ATAG: What's the Difference?
+
+While both WCAG and ATAG are W3C accessibility standards, they address different aspects of the accessibility ecosystem:
+
+### WCAG (Web Content Accessibility Guidelines)
+- **Focus:** The **content** that end users interact with
+- **Applies to:** Websites, web applications, mobile apps, PDFs, and other digital content
+- **Question it answers:** "Is this web page accessible to users with disabilities?"
+- **Example:** Ensuring a button has proper contrast, keyboard accessibility, and screen reader support
+
+### ATAG (Authoring Tool Accessibility Guidelines)
+- **Focus:** The **tools** used to create content
+- **Applies to:** Content management systems (CMS), WYSIWYG editors, code editors, design tools, and other authoring software
+- **Question it answers:** "Can people with disabilities use this tool to create content, and does the tool help create accessible content?"
+- **Example:** A CMS that prompts for alt text, validates accessibility, and has an accessible interface itself
+
+### The Relationship
+
+ATAG and WCAG work together:
+
+1. **ATAG Part A:** Ensures the authoring tool interface is accessible (so people with disabilities can use the tool)
+2. **ATAG Part B:** Ensures the tool helps authors create WCAG-compliant content (prompts, validators, accessible templates)
+
+**In practice:** If you're building a CMS or content creation tool, you need to consider ATAG. If you're building a website or web application, you focus on WCAG. However, using ATAG-compliant tools makes it easier to create WCAG-compliant content.
+
+### Which One Applies to ITT?
+
+For most ITT projects:
+- **Primary focus:** **WCAG 2.2 Level AA** (making our products accessible)
+- **Secondary consideration:** When selecting or building authoring tools (CMS, design tools), consider ATAG compliance to ensure the tools themselves are accessible and help teams create accessible content
+
 ## WCAG-UX
 
 **What it is:** Not an official standard
@@ -21,6 +62,8 @@ sidebar_position: 10
 
 **Details:** ATAG (Authoring Tool Accessibility Guidelines) is a W3C standard that provides guidelines for making authoring tools themselves accessible. This includes content management systems, WYSIWYG editors, code editors, and other tools used to create web content. ATAG has two main parts: Part A focuses on making the authoring tool interface accessible to authors with disabilities, while Part B ensures the tool helps authors create accessible content through features like accessibility checking, prompts for alt text, and accessible template generation. Compliance with ATAG helps ensure that people with disabilities can contribute to web content creation, and that tools guide all authors toward creating accessible output.
 
+For a comparison of WCAG vs ATAG and when each applies, see the **[WCAG vs ATAG](#wcag-vs-atag-whats-the-difference)** section above.
+
 ## WAI-ARIA
 
 **What it is:** Accessible Rich Internet Applications
@@ -28,6 +71,8 @@ sidebar_position: 10
 **Purpose:** Adds semantics (roles, states, properties) to dynamic web content
 
 **Details:** WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) is a technical specification that provides a way to make dynamic web content and applications more accessible to people using assistive technologies, particularly screen readers. ARIA doesn't change the visual appearance or behavior of content, but adds semantic meaning through roles, states, and properties that assistive technologies can understand. Common use cases include custom interactive components (like custom dropdowns or tabs), live regions for dynamic content updates, and complex widgets that don't have native HTML equivalents. ARIA should be used as a supplement to semantic HTML—when HTML5 elements are available, they should be used first. ARIA is essential for modern, JavaScript-heavy web applications where standard HTML semantics aren't sufficient.
+
+**Key Resource:** The **[ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/)** is the official W3C guide for implementing ARIA correctly. It provides design patterns, code examples, and best practices for building accessible components.
 
 ## WCAG-EM
 
