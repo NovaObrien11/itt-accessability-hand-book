@@ -33,6 +33,15 @@ axe.run().then(results => {
 - **WebAIM Contrast Checker** - Quick ratio checks
 - **Colour Contrast Analyser** - Desktop app for detailed testing
 - **Browser dev tools** - Most have built-in contrast checking
+- **Deque Color Contrast Analyzer** - Online tool for manual color comparison
+- **Chrome Eyedropper** - Built into DevTools for sampling colors
+
+For comprehensive color contrast testing workflows, see our [Color Contrast Testing Guide](/docs/qa/color-contrast-testing).
+
+## Readability Tools
+- **Hemingway Editor** - Free web tool that highlights hard-to-read sentences and suggests improvements
+- **Microsoft Word** - Built-in readability statistics (Flesch-Kincaid grade level)
+- **Grammarly** - Includes readability suggestions and clarity improvements
 
 ## Pitfalls
 - **Only testing with automated tools** - They miss context and user experience issues

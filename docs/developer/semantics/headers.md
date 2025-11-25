@@ -17,8 +17,8 @@ Use semantic heading tags `(<h1>–<h6>)` in order to structure your content—n
 
 - **Every major section needs a heading.**
 - Start your content with `<h1>` as the main title.
-- Use headings **in order**—don’t skip levels (use `<h2>` after `<h1>`, `<h3>` after `<h2>`, etc.).
-- Don’t use headings *just* for styling. Use CSS for looks, semantic tags for structure.
+- **Best practice:** Use headings **in order**—don't skip levels (use `<h2>` after `<h1>`, `<h3>` after `<h2>`, etc.). While not explicitly required by WCAG, maintaining sequential heading levels improves navigation for screen reader users and creates a clearer document structure.
+- Don't use headings *just* for styling. Use CSS for looks, semantic tags for structure.
 
 ---
 
@@ -32,9 +32,9 @@ Use semantic heading tags `(<h1>–<h6>)` in order to structure your content—n
 
 ## Pitfalls
 
-- **Don’t skip heading levels.** (Example: don’t go from `<h1>` to `<h4>`.)
-- **Don’t use headings for navigation, sidebars, or footers.** Use them for content structure only.
-- **Don’t use faux headings.** (`<div class="h2">` ≠ `<h2>`)
+- **Don't skip heading levels.** (Example: don't go from `<h1>` to `<h4>`.) While not a WCAG requirement, skipping levels creates confusion for screen reader users navigating by headings.
+- **Don't use headings for navigation, sidebars, or footers.** Use them for content structure only.
+- **Don't use faux headings.** (`<div class="h2">` ≠ `<h2>`)
 - Assistive tech relies on headings for orientation—get this right, and everyone wins.
 
 ---

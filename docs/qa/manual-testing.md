@@ -19,29 +19,45 @@ sidebar_position: 3
 4. **Link context** - Links make sense out of context
 5. **Image descriptions** - Alt text provides meaningful information
 
+For comprehensive form label and instruction testing, see the **[Form Label Testing Guide](/docs/qa/form-label-testing)**.
+
 ### Zoom and Reflow
 1. **200% zoom** - Content remains usable
 2. **400% zoom** - No horizontal scrolling (WCAG 2.1)
 3. **Mobile viewport** - Content reflows properly
 
+### Color Contrast Testing
+1. **Text contrast** - Body text 4.5:1, large text 3:1
+2. **UI components** - Buttons, forms, icons have 3:1 contrast
+3. **Interactive states** - Hover and focus states meet contrast requirements
+4. **Graphical objects** - Charts, graphs, meaningful icons have 3:1 contrast
+
+For comprehensive color contrast testing workflows and tools, see the **[Color Contrast Testing Guide](/docs/qa/color-contrast-testing)**.
+
 ## Screen Reader Testing Guide
 
-### macOS VoiceOver
-```
-Cmd + F5          Start/stop VoiceOver
-Ctrl + Option + → Navigate forward
-Ctrl + Option + ← Navigate backward
-Ctrl + Option + U Open rotor (headings, links, etc.)
-```
+For comprehensive screen reader testing guidance, including mobile testing with VoiceOver and TalkBack, see the **[Screen Readers Guide](/docs/developer/resources/ScreenReaders)**.
 
-### Windows NVDA
-```
-Ctrl + Alt + N    Start NVDA
-H                 Next heading
-K                 Next link
-F                 Next form field
-Insert + F7       Elements list
-```
+### Quick Reference
+
+**macOS VoiceOver:**
+- `Cmd + F5` - Start/stop VoiceOver
+- `Ctrl + Option + →` - Navigate forward
+- `Ctrl + Option + ←` - Navigate backward
+- `Ctrl + Option + U` - Open rotor (headings, links, etc.)
+
+**Windows NVDA:**
+- `Ctrl + Alt + N` - Start NVDA
+- `H` - Next heading
+- `K` - Next link
+- `F` - Next form field
+- `Insert + F7` - Elements list
+
+**Windows JAWS:**
+- `Insert + F7` - Elements list
+- `H` - Next heading
+- `K` - Next link
+- `F` - Next form field
 
 ### Testing Checklist
 - [ ] Page title announced
