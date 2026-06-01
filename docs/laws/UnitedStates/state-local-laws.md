@@ -1,6 +1,6 @@
 ---
 slug: /state-local-laws
-sidebar_position: 5
+sidebar_position: 6
 description: State and local accessibility laws that may apply beyond federal requirements
 ---
 
