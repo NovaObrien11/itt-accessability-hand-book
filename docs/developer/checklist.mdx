@@ -45,6 +45,14 @@ Before writing code, ensure your environment is set up to catch issues early.
 | <Square size={24} /> | **No Text in Images**: Avoid baking text into images. If unavoidable, ensure the `alt` text contains the full message. |
 | <Square size={24} /> | **Captions**: Ensure all video content has closed captions. |
 
+### <Laptop size={28} style={{verticalAlign: 'middle', marginRight: '10px'}} /> Responsive Design & Reflow
+|   | Checklist Item |
+|---|:--------------|
+| <Square size={24} /> | **Reflow (1.4.10)**: Content wraps and reflows without requiring horizontal scrolling at 320px width (or 400% zoom). | [Reflow Guide](/docs/developer/perceivable/Reflow) |
+| <Square size={24} /> | **No Fixed Widths**: Main layout containers use relative units (`%`, `vw`, `rem`) or `max-width` instead of fixed pixel widths. |
+| <Square size={24} /> | **Responsive Media**: Images, videos, and custom components scale down gracefully to fit smaller viewports. |
+| <Square size={24} /> | **Scrollable Tables**: Tables or complex data grids are wrapped in container elements that allow localized horizontal scrolling. |
+
 ### <CursorClick size={28} style={{verticalAlign: 'middle', marginRight: '10px'}} /> ARIA (Accessible Rich Internet Applications)
 > **First Rule of ARIA**: Don't use ARIA if a native HTML element will do.
 

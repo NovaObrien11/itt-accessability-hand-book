@@ -26,6 +26,8 @@ For comprehensive form label and instruction testing, see the **[Form Label Test
 2. **400% zoom** - No horizontal scrolling (WCAG 2.1)
 3. **Mobile viewport** - Content reflows properly
 
+For comprehensive reflow and responsive design testing, see the **[Reflow Guide](/docs/developer/perceivable/Reflow)**.
+
 ### Color Contrast Testing
 1. **Text contrast** - Body text 4.5:1, large text 3:1
 2. **UI components** - Buttons, forms, icons have 3:1 contrast
