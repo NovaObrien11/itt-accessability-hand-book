@@ -1,33 +1,51 @@
 ---
 slug: /how-to-use
 sidebar_position: 1
+---
+
+# How to Use This Handbook
+
+This handbook is In Time Tec's internal guide for improving user experience, implementing accessible patterns, and maintaining compliance. It mirrors the structure of **WCAG 2.2 AA** and **EN 301-549**.
 
 ---
 
-# How to use
-- This handbook mirrors WCAG 2.1 AA and EN 301-549 but isn’t a substitute for them. 
-- Use it as ITT’s guide for improving user experience and staying compliant—not as a replacement for official standards.
+## The WCAG Numbering System
 
-## Perceivable  
-- Information and user interface components must be presentable to users in ways they can perceive.
-- Can't be invisible to all of their senses
+WCAG success criteria follow a strict, three-tier hierarchical format: **Principle . Guideline . Success Criterion**
 
+Let's look at **SC 4.1.2 (Name, Role, Value)**:
 
-## Operable
+```text
+       4      .      1      .      2
+   ┌───────┐     ┌───────┐     ┌───────┐
+   Principle     Guideline     Success Criterion
+   (Robust)     (Compatible)   (Name, Role, Value)
+```
 
-- User interface components and navigation must be operable.
-- Interface cannot require interaction that a user cannot perform
+### 1. The Principle (The First Digit — `4`)
+All accessibility rules fall under four main principles, known as **POUR**:
+- **P**erceivable (1.x): Can users see/hear the content?
+- **O**perable (2.x): Can users navigate and interact with the interface?
+- **U**nderstandable (3.x): Can users make sense of the content and operation?
+- **R**obust (4.x): Does it work reliably across different devices and screen readers?
 
+### 2. The Guideline (The Second Digit — `4.1`)
+Each principle is broken down into sub-guidelines focusing on specific objectives (e.g., `4.1` focuses on maximizing compatibility with current and future user agents).
 
-## Understandable
-- Information and the operation of user interface must be understandable.
-- The content or operation cannot be beyond their understanding
+### 3. The Success Criterion (The Third Digit — `4.1.2`)
+This is the specific, testable rule (e.g., `4.1.2` requires interactive controls to programmatically expose their name, role, and value).
 
+---
 
-## Robust
+## WCAG Version Layering
 
-- Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.
-- As technologies and user agents evolve, the content should remain accessible
+WCAG is **backward-compatible**. When new versions are released, existing numbers never change. New rules are simply appended to the end of existing guidelines:
+
+- **WCAG 2.0 (2008)**: The foundational bedrock (e.g., `1.1.1`, `2.1.1`, `4.1.2`).
+- **WCAG 2.1 (2018)**: Added mobile and low-vision rules (e.g., `1.4.10 Reflow`).
+- **WCAG 2.2 (2023)**: Added cognitive and motor rules (e.g., `3.3.7 Accessible Authentication`), and obsoleted `4.1.1 Parsing`.
+
+---
 
 ## Resources
 - [W3 Accessibility Principles](https://www.w3.org/WAI/fundamentals/accessibility-principles/)
