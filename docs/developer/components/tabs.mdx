@@ -1,0 +1,375 @@
+---
+title: Accessible Tabs
+sidebar_position: 4
+---
+
+import React, { useState, useRef } from 'react';
+
+export const AccessibleTabsDemo = () => {
+  const [activeIndex, setActiveTabIndex] = useState(0);
+  const tabRefs = useRef([]);
+  const tabs = [
+    {
+      id: 'design',
+      label: 'Design Phase',
+      content: 'In the design phase, ensure tab layouts are clear, have high contrast, and include a visible focus indicator. Avoid cramming too many tabs into a single row, and plan for responsiveness.',
+    },
+    {
+      id: 'develop',
+      label: 'Development Phase',
+      content: 'During development, use semantic HTML or correct ARIA roles (tablist, tab, tabpanel). Manage focus dynamically using arrow keys and the tabIndex attribute to ensure keyboard accessibility.',
+    },
+    {
+      id: 'test',
+      label: 'Testing Phase',
+      content: 'In the testing phase, verify keyboard navigation (ArrowLeft, ArrowRight, Home, End). Use screen readers like VoiceOver or NVDA to confirm that roles, states, and relations are announced correctly.',
+    },
+  ];
+  const handleKeyDown = (event, index) => {
+    let newIndex = index;
+    if (event.key === 'ArrowRight') {
+      newIndex = (index + 1) % tabs.length;
+    } else if (event.key === 'ArrowLeft') {
+      newIndex = (index - 1 + tabs.length) % tabs.length;
+    } else if (event.key === 'Home') {
+      newIndex = 0;
+    } else if (event.key === 'End') {
+      newIndex = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    setActiveTabIndex(newIndex);
+    tabRefs.current[newIndex]?.focus();
+  };
+  return (
+    <div style={{
+      border: '1px solid var(--ifm-color-emphasis-300)',
+      borderRadius: '8px',
+      padding: '20px',
+      margin: '20px 0',
+      backgroundColor: 'var(--ifm-background-surface-color)',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+    }}>
+      <style>{`
+        .custom-tab-button:focus-visible {
+          outline: 3px solid var(--ifm-color-primary) !important;
+          outline-offset: 1px;
+          border-radius: 4px;
+        }
+        .custom-tab-panel:focus-visible {
+          outline: 3px solid var(--ifm-color-primary) !important;
+          outline-offset: 2px;
+          border-radius: 4px;
+        }
+      `}</style>
+      <div 
+        role="tablist" 
+        aria-label="Accessibility lifecycle phases"
+        style={{
+          display: 'flex',
+          borderBottom: '2px solid var(--ifm-color-emphasis-300)',
+          gap: '8px',
+          overflowX: 'auto',
+          padding: '4px 4px',
+          margin: '-4px -4px 12px -4px'
+        }}
+      >
+        {tabs.map((tab, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <button
+              key={tab.id}
+              id={`tab-${tab.id}`}
+              role="tab"
+              aria-selected={isActive}
+              aria-controls={`panel-${tab.id}`}
+              tabIndex={isActive ? 0 : -1}
+              ref={(el) => { tabRefs.current[index] = el; }}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              onClick={() => setActiveTabIndex(index)}
+              style={{
+                padding: '10px 16px',
+                border: 'none',
+                background: 'none',
+                borderBottom: isActive ? '3px solid var(--ifm-color-primary)' : '3px solid transparent',
+                color: isActive ? 'var(--ifm-color-primary)' : 'var(--ifm-color-emphasis-700)',
+                fontWeight: '500',
+                textShadow: isActive ? '0.06ch 0 0 currentColor' : 'none',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                outline: 'none',
+                transition: 'all 0.2s ease',
+              }}
+              className="custom-tab-button"
+            >
+              {tab.label}
+            </button>
+          );
+        })}
+      </div>
+      <div style={{ display: 'grid' }}>
+        {tabs.map((tab, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div
+              key={tab.id}
+              id={`panel-${tab.id}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${tab.id}`}
+              tabIndex={isActive ? 0 : -1}
+              style={{
+                gridArea: '1 / 1',
+                padding: '8px 4px',
+                color: 'var(--ifm-color-emphasis-800)',
+                lineHeight: '1.6',
+                outline: 'none',
+                visibility: isActive ? 'visible' : 'hidden',
+                opacity: isActive ? 1 : 0,
+                transition: 'opacity 0.15s ease, visibility 0.15s ease',
+              }}
+              className="custom-tab-panel"
+            >
+              {tab.content}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+Tabs are a common interface pattern used to organize content into logical groups, allowing users to view one group at a time. However, custom tabs are frequently implemented in ways that block keyboard users and screen readers.
+
+This guide explains how to build fully compliant tabs using standard ARIA patterns and showcases how Docusaurus's built-in features make this straightforward.
+
+---
+
+## Interactive Demo
+
+Use your mouse or keyboard to interact with the live Tabs component below.
+
+<AccessibleTabsDemo />
+
+### Keyboard Interaction Guide
+- **Tab**: Focuses the active tab button. Pressing Tab again moves focus into the active tab panel.
+- **Right Arrow**: Moves focus to the next tab and activates it.
+- **Left Arrow**: Moves focus to the previous tab and activates it.
+- **Home**: Moves focus to the first tab and activates it.
+- **End**: Moves focus to the last tab and activates it.
+
+---
+
+## The WAI-ARIA Tabs Pattern
+
+To make custom tabs accessible, you must establish the correct relationships, roles, and keyboard behaviors using ARIA attributes.
+
+| Attribute | Applied To | Purpose |
+| :--- | :--- | :--- |
+| `role="tablist"` | Container element | Identifies the element as a container for a set of tabs. |
+| `role="tab"` | Tab button elements | Identifies the element as an interactive tab trigger. |
+| `role="tabpanel"` | Content container elements | Identifies the element as the container for a tab's content. |
+| `aria-selected="true\|false"` | Tab button elements | Indicates which tab is currently active and selected. |
+| `aria-controls="[panel-id]"` | Tab button elements | Programmatically associates the tab with its corresponding content panel. |
+| `aria-labelledby="[tab-id]"` | Content container elements | Programmatically labels the tab panel using the corresponding tab's text. |
+| `tabIndex={0}` | Active tab & panels | Places the active tab button and the panels in the natural keyboard tab order. |
+| `tabIndex={-1}` | Inactive tabs | Removes inactive tab buttons from the tab order so users can navigate them with arrow keys. |
+
+---
+
+## Keyboard Navigation Specifications
+
+A compliant tab component must support the following keyboard interactions:
+
+### 1. Arrow Key Navigation (Roving tabindex)
+Only the active tab should be focusable via the `Tab` key (`tabIndex={0}`). All other tabs must have `tabIndex={-1}`. When a tab button has focus, users navigate between tabs using the `Left Arrow` and `Right Arrow` keys. 
+
+### 2. Automatic vs. Manual Activation
+In our implementation, we use **automatic activation**, where moving focus to a tab with arrow keys automatically selects and displays that tab. This is the recommended pattern for tabs where content loads instantly.
+
+### 3. Focusable Tab Panels
+If a tab panel contains static text with no focusable elements (like links or buttons), the panel itself must have `tabIndex={0}`. This allows keyboard users to focus the panel so they can scroll its content using the keyboard arrow keys, and ensures screen readers can easily read the content.
+
+---
+
+## WCAG 2.2 Success Criteria Mapping
+
+Implementing the ARIA Tabs pattern satisfies several key WCAG success criteria:
+
+### 1.3.1 Info and Relationships (Level A)
+The semantic structure (`tablist`, `tab`, `tabpanel`) and relationship attributes (`aria-controls`, `aria-labelledby`) ensure that screen readers understand how the tab headers relate to the content panels, even when the visual layout changes.
+
+### 2.1.1 Keyboard (Level A)
+All tab triggers and panels can be accessed and operated entirely using a keyboard.
+
+### 2.4.3 Focus Order (Level A)
+Keyboard focus moves in a logical, predictable sequence: from the tab list to the active tab, then to the active tab panel, and finally to any focusable elements inside the panel.
+
+### 2.4.7 Focus Visible (Level A)
+Both the tab buttons and the tab panels have highly visible, custom focus indicators when focused via keyboard navigation.
+
+### 4.1.2 Name, Role, Value (Level A)
+The role, state (`aria-selected`), and accessible name of each tab are programmatically determinable by assistive technologies.
+
+---
+
+## React + TypeScript Implementation
+
+Here is a clean, production-ready React component implementing the accessible tabs pattern.
+
+```tsx
+import React, { useState, useRef } from 'react';
+
+interface Tab {
+  id: string;
+  label: string;
+  content: React.ReactNode;
+}
+
+interface AccessibleTabsProps {
+  tabs: Tab[];
+  ariaLabel: string;
+}
+
+export const AccessibleTabs: React.FC<AccessibleTabsProps> = ({ tabs, ariaLabel }) => {
+  const [activeIndex, setActiveTabIndex] = useState(0);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+    let newIndex = index;
+
+    if (event.key === 'ArrowRight') {
+      newIndex = (index + 1) % tabs.length;
+    } else if (event.key === 'ArrowLeft') {
+      newIndex = (index - 1 + tabs.length) % tabs.length;
+    } else if (event.key === 'Home') {
+      newIndex = 0;
+    } else if (event.key === 'End') {
+      newIndex = tabs.length - 1;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    setActiveTabIndex(newIndex);
+    tabRefs.current[newIndex]?.focus();
+  };
+
+  return (
+    <div className="tabs-container">
+      <div role="tablist" aria-label={ariaLabel} className="tab-list">
+        {tabs.map((tab, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <button
+              key={tab.id}
+              id={`tab-${tab.id}`}
+              role="tab"
+              aria-selected={isActive}
+              aria-controls={`panel-${tab.id}`}
+              tabIndex={isActive ? 0 : -1}
+              ref={(el) => { tabRefs.current[index] = el; }}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              onClick={() => setActiveTabIndex(index)}
+              className={`tab-button \${isActive ? 'active' : ''}`}
+            >
+              {tab.label}
+            </button>
+          );
+        })}
+      </div>
+      <div className="tab-panels-container">
+        {tabs.map((tab, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div
+              key={tab.id}
+              id={`panel-${tab.id}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${tab.id}`}
+              tabIndex={isActive ? 0 : -1}
+              className={`tab-panel \${isActive ? 'active' : ''}`}
+            >
+              {tab.content}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+```
+
+### Required CSS Styles
+
+Add the following styles to your CSS file to ensure proper layout and visible focus indicators:
+
+```css
+.tabs-container {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.tab-list {
+  display: flex;
+  border-bottom: 2px solid var(--ifm-color-emphasis-300);
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 4px;
+  margin: -4px -4px 12px -4px;
+}
+
+.tab-button {
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  border-bottom: 3px solid transparent;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  font-size: 1rem;
+  outline: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tab-button.active {
+  border-bottom: 3px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  text-shadow: 0.06ch 0 0 currentColor;
+}
+
+.tab-button:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+  border-radius: 4px;
+}
+
+.tab-panels-container {
+  display: grid;
+}
+
+.tab-panel {
+  grid-area: 1 / 1;
+  padding: 8px 4px;
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+.tab-panel.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tab-panel:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+```
+
+---
+
